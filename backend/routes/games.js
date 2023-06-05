@@ -16,7 +16,11 @@ router.get("/", (req, res) => {
 
   axios
     .request(opt)
-    .then((response) => res.send(response.data))
+    .then((response) => {
+      const result = response.data.results.slice(0, 51);
+
+      res.send(result);
+    })
     .catch((err) => console.error(err));
 });
 
@@ -24,7 +28,7 @@ router.get("/", (req, res) => {
 router.get("/game/:gameId", (req, res) => {
   const opt = {
     method: "GET",
-    url: "https://api.rawg.io/api/" + req.params.gameId,
+    url: "https://api.rawg.io/api/games/" + req.params.gameId,
     params: {
       key: process.env.RAWG_API_KEY,
     },
