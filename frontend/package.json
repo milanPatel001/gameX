@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "autoprefixer": "10.4.14",
+    "embla-carousel-autoplay": "^8.0.0-rc07",
+    "embla-carousel-react": "^8.0.0-rc07",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "next": "13.4.4",
